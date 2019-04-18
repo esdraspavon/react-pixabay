@@ -3,11 +3,17 @@ import Form from "./components/Form";
 
 class App extends Component {
   state = {
-    query: ""
+    query: "",
+    images: []
   };
 
   searchInApi = () => {
-    console.log("desde search api");
+    const query = this.state.query;
+    const url = `https://pixabay.com/api/?key=12237588-9f208471315796a0faf6a5ada&q=${query}`;
+
+    fetch(url)
+      .then(resp => resp.json())
+      .then(data => this.setState({ images: data.hits }));
   };
 
   search = query => {
