@@ -16,6 +16,8 @@ class Results extends Component {
         <Pagination
           nextPage={this.props.nextPage}
           previousPage={this.props.previousPage}
+          page={this.props.page}
+          totalPages={this.props.totalPages}
         />
       </React.Fragment>
     );

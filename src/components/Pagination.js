@@ -1,24 +1,42 @@
-import React from "react";
+import React, { Component } from "react";
 
-const Pagination = props => {
-  return (
-    <div className="py-5">
+class Pagination extends Component {
+  showPreviousButton = () => {
+    const { page } = this.props;
+    if (page === 1) return null;
+    return (
       <button
-        onClick={props.previousPage}
+        onClick={this.props.previousPage}
         type="button"
         className="btn btn-info mr-1"
       >
         Anterior &larr;
       </button>
+    );
+  };
+
+  showNextButton = () => {
+    const { page, totalPages } = this.props;
+    if (page === totalPages) return null;
+    return (
       <button
-        onClick={props.nextPage}
+        onClick={this.props.nextPage}
         type="button"
         className="btn btn-info mr-1"
       >
         Siguiente &rarr;
       </button>
-    </div>
-  );
-};
+    );
+  };
+
+  render() {
+    return (
+      <div className="py-5">
+        {this.showPreviousButton()}
+        {this.showNextButton()}
+      </div>
+    );
+  }
+}
 
 export default Pagination;
