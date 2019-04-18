@@ -28,7 +28,7 @@ class App extends Component {
           <p className="lead text-center">Buscador de imágenes</p>
           <Form search={this.search} />
         </div>
-        <div className="row">
+        <div className="row justify-content-center">
           <Results images={this.state.images} />
         </div>
       </div>

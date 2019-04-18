@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Image from "./Image";
+import Pagination from "./Pagination";
 
 class Results extends Component {
   showImages = () => {
@@ -12,6 +13,7 @@ class Results extends Component {
             <Image key={image.id} image={image} />
           ))}
         </div>
+        <Pagination />
       </React.Fragment>
     );
   };
