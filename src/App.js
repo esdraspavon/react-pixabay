@@ -31,7 +31,10 @@ class App extends Component {
     //restar a la pagina actual
     page--;
     //agregar al state
-    this.setState({ page });
+    this.setState({ page }, () => {
+      this.searchInApi();
+      this.scroll();
+    });
   };
   nextPage = () => {
     //leemos el state
@@ -39,7 +42,15 @@ class App extends Component {
     //sujmar a la pagina actual
     page++;
     //agregar al state
-    this.setState({ page });
+    this.setState({ page }, () => {
+      this.searchInApi();
+      this.scroll();
+    });
+  };
+
+  scroll = () => {
+    const elem = document.querySelector(".jumbotron");
+    elem.scrollIntoView("smooth", "start");
   };
 
   render() {
