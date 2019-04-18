@@ -1,12 +1,20 @@
 import React from "react";
 
-const Pagination = () => {
+const Pagination = props => {
   return (
     <div className="py-5">
-      <button type="button" className="btn btn-info mr-1">
+      <button
+        onClick={props.previousPage}
+        type="button"
+        className="btn btn-info mr-1"
+      >
         Anterior &larr;
       </button>
-      <button type="button" className="btn btn-info mr-1">
+      <button
+        onClick={props.nextPage}
+        type="button"
+        className="btn btn-info mr-1"
+      >
         Siguiente &rarr;
       </button>
     </div>

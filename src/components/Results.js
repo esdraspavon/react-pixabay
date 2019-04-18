@@ -13,7 +13,10 @@ class Results extends Component {
             <Image key={image.id} image={image} />
           ))}
         </div>
-        <Pagination />
+        <Pagination
+          nextPage={this.props.nextPage}
+          previousPage={this.props.previousPage}
+        />
       </React.Fragment>
     );
   };
